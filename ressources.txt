@@ -1,0 +1,4 @@
+https://cburch.com/cs/330/reading/mips-ref.pdf
+https://student.cs.uwaterloo.ca/~isg/res/mips/opcodes
+https://ee.cooper.edu/~curro/comparch/pipeline/chapter4_pipelining_END_FA11.pdf
+https://training.mips.com/basic_mips/PDF/Instruction_Set.pdf
