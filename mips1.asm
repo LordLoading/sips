@@ -1,2 +1,1 @@
-addi $2, $0, 0xffff8000
-lui $2, 0xabcd
+addi $1, $zero, 0x0fff
