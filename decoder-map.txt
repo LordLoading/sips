@@ -1,0 +1,20 @@
+R = R-type 
+I = I-type
+J = J-type
+s = stores in reg
+j = jumps
+B = branches
+b = uses b reg
+i = uses imm
+w = writes to mem
+r = reads from mem
+
+    000  001  010  011  100  101  110  111
+000 R         Ji   Jsi  IBi  IBi  IBi  IBi
+001 Isi  Isi  Isi  Isi  Isi  Isi  Isi
+010  
+011  
+100 Irsi Rrsi      Irsi Irsi Irsi 
+101 Iwi  Iwi       Iwi
+110 
+111
