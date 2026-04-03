@@ -9,12 +9,13 @@ i = uses imm
 w = writes to mem
 r = reads from mem
 
+op
     000  001  010  011  100  101  110  111
 000 R         Ji   Jsi  IBi  IBi  IBi  IBi
 001 Isi  Isi  Isi  Isi  Isi  Isi  Isi
 010  
 011  
-100 Irsi Rrsi      Irsi Irsi Irsi 
+100 Irsi Irsi      Irsi Irsi Irsi 
 101 Iwi  Iwi       Iwi
 110 
 111
