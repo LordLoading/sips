@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="4.1.0dev" version="1.0">
-  This file is intended to be loaded by Logisim-evolution v4.1.0dev(https://github.com/logisim-evolution/).
+<project source="4.1.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v4.1.0(https://github.com/logisim-evolution/).
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="fanout" val="5"/>
-      <a name="incoming" val="5"/>
+      <a name="facing" val="west"/>
+      <a name="spacing" val="4"/>
     </tool>
     <tool name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="6"/>
     </tool>
     <tool name="Probe">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="radix" val="10signed"/>
     </tool>
@@ -23,7 +21,6 @@
       <a name="facing" val="east"/>
     </tool>
     <tool name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </tool>
     <tool name="POR">
@@ -100,6 +97,10 @@
       <a name="matrixcols" val="16"/>
       <a name="matrixrows" val="16"/>
     </tool>
+    <tool name="RGB Video">
+      <a name="height" val="64"/>
+      <a name="width" val="64"/>
+    </tool>
   </lib>
   <lib desc="#TTL" name="6"/>
   <lib desc="#TCL" name="7"/>
@@ -107,6 +108,8 @@
   <lib desc="#BFH-Praktika" name="9"/>
   <lib desc="#Input/Output-Extra" name="10"/>
   <lib desc="#Soc" name="11"/>
+  <lib desc="#FPArithmetic" name="12"/>
+  <lib desc="#HDL-IP" name="13"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -125,10 +128,11 @@
     <tool lib="8" name="Text Tool"/>
     <sep/>
     <tool lib="0" name="Pin">
-      <a name="facing" val="west"/>
+      <a name="facing" val="north"/>
+      <a name="width" val="5"/>
     </tool>
     <tool lib="0" name="Pin">
-      <a name="facing" val="west"/>
+      <a name="facing" val="south"/>
       <a name="type" val="output"/>
     </tool>
     <sep/>
@@ -137,14 +141,16 @@
       <a name="size" val="20"/>
     </tool>
     <tool lib="1" name="AND Gate">
-      <a name="facing" val="west"/>
+      <a name="negate0" val="true"/>
       <a name="size" val="30"/>
     </tool>
     <tool lib="1" name="OR Gate">
-      <a name="facing" val="west"/>
+      <a name="facing" val="south"/>
       <a name="size" val="30"/>
     </tool>
-    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="XOR Gate">
+      <a name="size" val="30"/>
+    </tool>
     <tool lib="1" name="NAND Gate"/>
     <tool lib="1" name="NOR Gate">
       <a name="inputs" val="3"/>
@@ -309,12 +315,6 @@
       <circ-port dir="out" pin="190,250" x="50" y="100"/>
       <circ-port dir="out" pin="190,310" x="50" y="120"/>
     </appear>
-    <comp lib="0" loc="(1110,430)" name="Pull Resistor">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(1110,500)" name="Pull Resistor">
-      <a name="facing" val="north"/>
-    </comp>
     <comp lib="0" loc="(1430,630)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="6"/>
@@ -469,35 +469,29 @@
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(190,150)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="address"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(190,200)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="accessAmt"/>
       <a name="type" val="output"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(190,230)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="read"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(190,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="write"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(190,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="dataOut"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(190,390)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="dataIn"/>
       <a name="width" val="32"/>
     </comp>
@@ -554,7 +548,6 @@
       <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(490,980)" name="Clock">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(530,620)" name="Splitter">
@@ -637,18 +630,18 @@
     <comp lib="0" loc="(660,530)" name="Pull Resistor">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="1" loc="(1680,890)" name="AND Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+    </comp>
     <comp lib="1" loc="(1680,950)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(1700,890)" name="AND Gate">
+    <comp lib="1" loc="(1710,890)" name="AND Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(1730,890)" name="AND Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(1750,860)" name="OR Gate">
+    <comp lib="1" loc="(1750,870)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(1950,150)" name="AND Gate">
@@ -758,12 +751,20 @@
       <a name="width" val="32"/>
     </comp>
     <comp loc="(1240,400)" name="alu"/>
+    <comp loc="(1310,1060)" name="forwarding_unit"/>
     <comp loc="(1350,210)" name="stageReg"/>
-    <comp loc="(1800,210)" name="stageReg"/>
+    <comp loc="(1360,1060)" name="forwarding_unit"/>
+    <comp loc="(1790,210)" name="stageReg"/>
     <comp loc="(480,210)" name="decoderer"/>
     <comp loc="(510,210)" name="stageReg"/>
     <comp loc="(780,390)" name="Regs"/>
     <comp loc="(940,210)" name="stageReg"/>
+    <wire from="(1020,1030)" to="(1320,1030)"/>
+    <wire from="(1020,260)" to="(1020,1030)"/>
+    <wire from="(1020,260)" to="(1320,260)"/>
+    <wire from="(1030,1020)" to="(1370,1020)"/>
+    <wire from="(1030,250)" to="(1030,1020)"/>
+    <wire from="(1030,250)" to="(1320,250)"/>
     <wire from="(1040,410)" to="(1040,980)"/>
     <wire from="(1040,410)" to="(1090,410)"/>
     <wire from="(1040,980)" to="(1810,980)"/>
@@ -782,10 +783,16 @@
     <wire from="(1080,360)" to="(1080,390)"/>
     <wire from="(1080,360)" to="(1320,360)"/>
     <wire from="(1080,390)" to="(1090,390)"/>
+    <wire from="(1110,1050)" to="(1310,1050)"/>
+    <wire from="(1110,430)" to="(1110,440)"/>
+    <wire from="(1110,440)" to="(1140,440)"/>
+    <wire from="(1110,500)" to="(1110,1050)"/>
     <wire from="(1130,410)" to="(1140,410)"/>
     <wire from="(1130,480)" to="(1150,480)"/>
+    <wire from="(1140,1040)" to="(1360,1040)"/>
     <wire from="(1140,390)" to="(1140,410)"/>
     <wire from="(1140,390)" to="(1200,390)"/>
+    <wire from="(1140,440)" to="(1140,1040)"/>
     <wire from="(1150,400)" to="(1150,480)"/>
     <wire from="(1150,400)" to="(1200,400)"/>
     <wire from="(1160,230)" to="(1160,420)"/>
@@ -804,41 +811,54 @@
     <wire from="(1280,310)" to="(1280,380)"/>
     <wire from="(1280,310)" to="(1320,310)"/>
     <wire from="(1300,400)" to="(1310,400)"/>
+    <wire from="(1310,1050)" to="(1310,1060)"/>
     <wire from="(1310,340)" to="(1310,400)"/>
     <wire from="(1310,340)" to="(1320,340)"/>
+    <wire from="(1320,1030)" to="(1320,1060)"/>
+    <wire from="(1330,1010)" to="(1330,1060)"/>
+    <wire from="(1330,1010)" to="(1380,1010)"/>
     <wire from="(1330,380)" to="(1330,970)"/>
     <wire from="(1330,970)" to="(1650,970)"/>
+    <wire from="(1340,1000)" to="(1340,1060)"/>
+    <wire from="(1340,1000)" to="(1390,1000)"/>
     <wire from="(1350,210)" to="(1430,210)"/>
-    <wire from="(1350,220)" to="(1770,220)"/>
-    <wire from="(1350,230)" to="(1770,230)"/>
-    <wire from="(1350,240)" to="(1770,240)"/>
-    <wire from="(1350,250)" to="(1770,250)"/>
-    <wire from="(1350,260)" to="(1770,260)"/>
-    <wire from="(1350,270)" to="(1770,270)"/>
-    <wire from="(1350,280)" to="(1770,280)"/>
-    <wire from="(1350,290)" to="(1770,290)"/>
-    <wire from="(1350,300)" to="(1770,300)"/>
-    <wire from="(1350,310)" to="(1770,310)"/>
+    <wire from="(1350,220)" to="(1760,220)"/>
+    <wire from="(1350,230)" to="(1760,230)"/>
+    <wire from="(1350,240)" to="(1380,240)"/>
+    <wire from="(1350,250)" to="(1760,250)"/>
+    <wire from="(1350,260)" to="(1760,260)"/>
+    <wire from="(1350,270)" to="(1760,270)"/>
+    <wire from="(1350,280)" to="(1760,280)"/>
+    <wire from="(1350,290)" to="(1760,290)"/>
+    <wire from="(1350,300)" to="(1760,300)"/>
+    <wire from="(1350,310)" to="(1760,310)"/>
     <wire from="(1350,320)" to="(1420,320)"/>
     <wire from="(1350,330)" to="(1410,330)"/>
     <wire from="(1350,340)" to="(1540,340)"/>
-    <wire from="(1350,350)" to="(1770,350)"/>
+    <wire from="(1350,350)" to="(1760,350)"/>
     <wire from="(1350,360)" to="(1360,360)"/>
     <wire from="(1350,370)" to="(1370,370)"/>
+    <wire from="(1360,1040)" to="(1360,1060)"/>
     <wire from="(1360,360)" to="(1360,940)"/>
     <wire from="(1360,360)" to="(1530,360)"/>
+    <wire from="(1370,1020)" to="(1370,1060)"/>
     <wire from="(1370,370)" to="(1370,950)"/>
     <wire from="(1370,370)" to="(1510,370)"/>
+    <wire from="(1380,1010)" to="(1380,1060)"/>
+    <wire from="(1380,240)" to="(1380,1010)"/>
+    <wire from="(1380,240)" to="(1760,240)"/>
+    <wire from="(1390,1000)" to="(1390,1060)"/>
+    <wire from="(1390,1000)" to="(1830,1000)"/>
     <wire from="(1410,330)" to="(1410,430)"/>
-    <wire from="(1410,330)" to="(1770,330)"/>
+    <wire from="(1410,330)" to="(1760,330)"/>
     <wire from="(1410,430)" to="(1410,930)"/>
     <wire from="(1410,430)" to="(1680,430)"/>
-    <wire from="(1410,930)" to="(1720,930)"/>
+    <wire from="(1410,930)" to="(1700,930)"/>
     <wire from="(1420,320)" to="(1420,940)"/>
-    <wire from="(1420,320)" to="(1770,320)"/>
-    <wire from="(1420,940)" to="(1690,940)"/>
+    <wire from="(1420,320)" to="(1760,320)"/>
+    <wire from="(1420,940)" to="(1670,940)"/>
     <wire from="(1430,210)" to="(1430,630)"/>
-    <wire from="(1430,210)" to="(1770,210)"/>
+    <wire from="(1430,210)" to="(1760,210)"/>
     <wire from="(1470,190)" to="(1470,610)"/>
     <wire from="(1480,630)" to="(1480,650)"/>
     <wire from="(1490,630)" to="(1490,650)"/>
@@ -846,7 +866,7 @@
     <wire from="(1500,670)" to="(1690,670)"/>
     <wire from="(1500,830)" to="(1690,830)"/>
     <wire from="(1510,370)" to="(1510,680)"/>
-    <wire from="(1510,370)" to="(1770,370)"/>
+    <wire from="(1510,370)" to="(1760,370)"/>
     <wire from="(1510,680)" to="(1510,800)"/>
     <wire from="(1510,680)" to="(1520,680)"/>
     <wire from="(1510,800)" to="(1640,800)"/>
@@ -854,7 +874,7 @@
     <wire from="(1520,450)" to="(1520,570)"/>
     <wire from="(1520,570)" to="(1640,570)"/>
     <wire from="(1530,360)" to="(1530,410)"/>
-    <wire from="(1530,360)" to="(1770,360)"/>
+    <wire from="(1530,360)" to="(1760,360)"/>
     <wire from="(1530,410)" to="(1550,410)"/>
     <wire from="(1540,340)" to="(1540,390)"/>
     <wire from="(1540,340)" to="(1660,340)"/>
@@ -891,7 +911,7 @@
     <wire from="(1650,540)" to="(1670,540)"/>
     <wire from="(1650,950)" to="(1650,970)"/>
     <wire from="(1650,950)" to="(1660,950)"/>
-    <wire from="(1650,970)" to="(1780,970)"/>
+    <wire from="(1650,970)" to="(1770,970)"/>
     <wire from="(1660,340)" to="(1660,390)"/>
     <wire from="(1660,390)" to="(1670,390)"/>
     <wire from="(1660,410)" to="(1660,470)"/>
@@ -899,47 +919,47 @@
     <wire from="(1660,470)" to="(1720,470)"/>
     <wire from="(1660,550)" to="(1660,640)"/>
     <wire from="(1660,550)" to="(1670,550)"/>
+    <wire from="(1670,920)" to="(1670,940)"/>
     <wire from="(1680,420)" to="(1680,430)"/>
-    <wire from="(1680,950)" to="(1710,950)"/>
+    <wire from="(1680,840)" to="(1680,860)"/>
+    <wire from="(1680,840)" to="(1740,840)"/>
+    <wire from="(1680,860)" to="(1680,890)"/>
+    <wire from="(1680,860)" to="(1720,860)"/>
+    <wire from="(1680,950)" to="(1690,950)"/>
     <wire from="(1690,580)" to="(1690,670)"/>
     <wire from="(1690,810)" to="(1690,830)"/>
-    <wire from="(1690,920)" to="(1690,940)"/>
+    <wire from="(1690,920)" to="(1690,950)"/>
+    <wire from="(1690,950)" to="(1720,950)"/>
     <wire from="(1700,400)" to="(1720,400)"/>
-    <wire from="(1700,830)" to="(1700,850)"/>
-    <wire from="(1700,830)" to="(1740,830)"/>
-    <wire from="(1700,850)" to="(1700,890)"/>
-    <wire from="(1700,850)" to="(1720,850)"/>
+    <wire from="(1700,920)" to="(1700,930)"/>
     <wire from="(1710,540)" to="(1720,540)"/>
     <wire from="(1710,770)" to="(1730,770)"/>
-    <wire from="(1710,840)" to="(1710,870)"/>
-    <wire from="(1710,840)" to="(1750,840)"/>
-    <wire from="(1710,870)" to="(1710,880)"/>
-    <wire from="(1710,870)" to="(1720,870)"/>
-    <wire from="(1710,880)" to="(1730,880)"/>
-    <wire from="(1710,920)" to="(1710,950)"/>
-    <wire from="(1710,950)" to="(1740,950)"/>
+    <wire from="(1710,850)" to="(1710,880)"/>
+    <wire from="(1710,850)" to="(1750,850)"/>
+    <wire from="(1710,880)" to="(1710,890)"/>
+    <wire from="(1710,880)" to="(1720,880)"/>
     <wire from="(1720,340)" to="(1720,400)"/>
-    <wire from="(1720,340)" to="(1770,340)"/>
+    <wire from="(1720,340)" to="(1760,340)"/>
     <wire from="(1720,470)" to="(1720,540)"/>
-    <wire from="(1720,920)" to="(1720,930)"/>
+    <wire from="(1720,920)" to="(1720,950)"/>
+    <wire from="(1720,950)" to="(1980,950)"/>
     <wire from="(1730,170)" to="(1730,770)"/>
-    <wire from="(1730,880)" to="(1730,890)"/>
-    <wire from="(1740,160)" to="(1740,830)"/>
-    <wire from="(1740,920)" to="(1740,950)"/>
-    <wire from="(1740,950)" to="(1980,950)"/>
-    <wire from="(1750,150)" to="(1750,840)"/>
-    <wire from="(1750,860)" to="(1770,860)"/>
-    <wire from="(1770,860)" to="(1770,960)"/>
-    <wire from="(1780,380)" to="(1780,970)"/>
-    <wire from="(1800,240)" to="(1930,240)"/>
-    <wire from="(1800,270)" to="(1940,270)"/>
-    <wire from="(1800,280)" to="(1950,280)"/>
-    <wire from="(1800,340)" to="(1940,340)"/>
-    <wire from="(1800,350)" to="(1870,350)"/>
-    <wire from="(1800,360)" to="(1810,360)"/>
-    <wire from="(1800,370)" to="(1820,370)"/>
+    <wire from="(1740,160)" to="(1740,840)"/>
+    <wire from="(1750,150)" to="(1750,850)"/>
+    <wire from="(1750,870)" to="(1760,870)"/>
+    <wire from="(1760,870)" to="(1760,960)"/>
+    <wire from="(1770,380)" to="(1770,970)"/>
+    <wire from="(1790,240)" to="(1830,240)"/>
+    <wire from="(1790,270)" to="(1940,270)"/>
+    <wire from="(1790,280)" to="(1950,280)"/>
+    <wire from="(1790,340)" to="(1940,340)"/>
+    <wire from="(1790,350)" to="(1870,350)"/>
+    <wire from="(1790,360)" to="(1810,360)"/>
+    <wire from="(1790,370)" to="(1820,370)"/>
     <wire from="(1810,360)" to="(1810,980)"/>
     <wire from="(1820,370)" to="(1820,990)"/>
+    <wire from="(1830,240)" to="(1830,1000)"/>
+    <wire from="(1830,240)" to="(1930,240)"/>
     <wire from="(1870,350)" to="(1870,360)"/>
     <wire from="(1870,360)" to="(1880,360)"/>
     <wire from="(1870,380)" to="(1870,390)"/>
@@ -965,7 +985,7 @@
     <wire from="(220,170)" to="(220,220)"/>
     <wire from="(220,220)" to="(220,910)"/>
     <wire from="(220,950)" to="(220,960)"/>
-    <wire from="(220,960)" to="(1770,960)"/>
+    <wire from="(220,960)" to="(1760,960)"/>
     <wire from="(230,140)" to="(1600,140)"/>
     <wire from="(230,160)" to="(290,160)"/>
     <wire from="(230,190)" to="(1470,190)"/>
@@ -1116,8 +1136,8 @@
     <wire from="(940,220)" to="(1170,220)"/>
     <wire from="(940,230)" to="(1160,230)"/>
     <wire from="(940,240)" to="(1320,240)"/>
-    <wire from="(940,250)" to="(1320,250)"/>
-    <wire from="(940,260)" to="(1320,260)"/>
+    <wire from="(940,250)" to="(1030,250)"/>
+    <wire from="(940,260)" to="(1020,260)"/>
     <wire from="(940,270)" to="(1320,270)"/>
     <wire from="(940,280)" to="(1320,280)"/>
     <wire from="(940,290)" to="(1320,290)"/>
@@ -1134,36 +1154,28 @@
     <a name="circuit" val="Regs"/>
     <a name="simulationFrequency" val="32.0"/>
     <comp lib="0" loc="(1450,200)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1450,550)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,440)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,460)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,480)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,530)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(230,580)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
+    <comp lib="0" loc="(230,580)" name="Pin"/>
     <comp lib="0" loc="(710,40)" name="Pull Resistor">
       <a name="facing" val="east"/>
     </comp>
@@ -1704,23 +1716,18 @@
     <a name="circuit" val="alu"/>
     <a name="simulationFrequency" val="32.0"/>
     <comp lib="0" loc="(100,220)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(100,300)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(100,350)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(100,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(110,1010)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
       <a name="type" val="output"/>
     </comp>
@@ -1797,17 +1804,14 @@
       <a name="facing" val="west"/>
     </comp>
     <comp lib="0" loc="(640,1010)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(750,280)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(80,1010)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
       <a name="type" val="output"/>
     </comp>
@@ -2255,108 +2259,88 @@
       <circ-port dir="out" pin="230,70" x="80" y="60"/>
     </appear>
     <comp lib="0" loc="(180,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="sh"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fd"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fs"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ft"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="op"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm16"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(180,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm26"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(180,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="pc"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="func"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(200,620)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(220,620)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(230,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(230,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(230,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
@@ -2478,130 +2462,106 @@
       <circ-port dir="out" pin="230,730" x="80" y="250"/>
     </appear>
     <comp lib="0" loc="(180,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="sh"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fd"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fs"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ft"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="op"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm16"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(180,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm26"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(180,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="pc"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fsData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="func"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,730)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ftData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(200,800)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(220,800)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(230,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(230,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(230,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,730)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
@@ -2743,141 +2703,115 @@
       <circ-port dir="out" pin="230,810" x="80" y="270"/>
     </appear>
     <comp lib="0" loc="(180,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="sh"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fd"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fs"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ft"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="op"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm16"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(180,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm26"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(180,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="pc"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fsData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="func"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,730)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ftData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,810)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="exeData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(200,890)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(220,890)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(230,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(230,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(230,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,730)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,810)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
@@ -2997,37 +2931,30 @@
     <a name="circuit" val="idk"/>
     <a name="simulationFrequency" val="32.0"/>
     <comp lib="0" loc="(170,140)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(170,160)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(170,180)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(170,200)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(170,220)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(170,240)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(220,250)" name="Probe">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(240,130)" name="Splitter">
@@ -3067,7 +2994,6 @@
       <a name="incoming" val="32"/>
     </comp>
     <comp lib="0" loc="(290,130)" name="Probe">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="radix" val="16"/>
     </comp>
@@ -3195,152 +3121,124 @@
       <circ-port dir="out" pin="230,890" x="80" y="300"/>
     </appear>
     <comp lib="0" loc="(180,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="sh"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fd"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fs"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ft"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="op"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm16"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(180,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm26"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(180,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="pc"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="fsData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="func"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,730)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="ftData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,810)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="exeData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,890)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="memData"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(200,960)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(220,960)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(230,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(230,370)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(230,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(230,570)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(230,730)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,810)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(230,890)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
@@ -3470,7 +3368,6 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="2048000.0"/>
     <comp lib="0" loc="(70,180)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(70,180)" name="Splitter">
@@ -3481,11 +3378,9 @@
       <a name="spacing" val="2"/>
     </comp>
     <comp lib="0" loc="(70,60)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(70,80)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="1" loc="(130,110)" name="OR Gate">
@@ -3517,47 +3412,38 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="32.0"/>
     <comp lib="0" loc="(180,1010)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm26"/>
       <a name="width" val="26"/>
     </comp>
     <comp lib="0" loc="(180,1090)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="pc"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(180,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="sh"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,190)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="rd"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="rs"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,310)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="rt"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,610)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="op"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,70)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="func"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(180,950)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="label" val="imm16"/>
       <a name="width" val="16"/>
     </comp>
@@ -3608,98 +3494,83 @@
       <a name="spacing" val="2"/>
     </comp>
     <comp lib="0" loc="(580,1090)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="pcOut"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(580,130)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="shOut"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(580,200)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="trex"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(580,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="arex"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(580,270)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="brex"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(580,390)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="regStore"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,410)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="jump"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,430)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="branch"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,450)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="usesBRex"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,470)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="usesImm"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,490)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="writesMem"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,50)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="opOut"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(580,510)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="readsMem"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(580,90)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="funcOut"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(580,970)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="imm"/>
       <a name="type" val="output"/>
@@ -3871,183 +3742,140 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="32.0"/>
     <comp lib="0" loc="(520,1040)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(520,1100)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
       <a name="label" val="store"/>
     </comp>
     <comp lib="0" loc="(520,150)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(520,200)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(520,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(520,300)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(520,350)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(520,400)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="5"/>
     </comp>
-    <comp lib="0" loc="(520,450)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(520,500)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(520,550)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(520,600)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(520,650)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(520,700)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
-    <comp lib="0" loc="(520,750)" name="Pin">
-      <a name="appearance" val="classic"/>
-    </comp>
+    <comp lib="0" loc="(520,450)" name="Pin"/>
+    <comp lib="0" loc="(520,500)" name="Pin"/>
+    <comp lib="0" loc="(520,550)" name="Pin"/>
+    <comp lib="0" loc="(520,600)" name="Pin"/>
+    <comp lib="0" loc="(520,650)" name="Pin"/>
+    <comp lib="0" loc="(520,700)" name="Pin"/>
+    <comp lib="0" loc="(520,750)" name="Pin"/>
     <comp lib="0" loc="(520,800)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(520,880)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(520,960)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(570,1040)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="bData"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(570,1100)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
       <a name="label" val="flush"/>
     </comp>
     <comp lib="0" loc="(570,150)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="opOut"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(570,200)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="funcOut"/>
       <a name="type" val="output"/>
       <a name="width" val="6"/>
     </comp>
     <comp lib="0" loc="(570,250)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="shOut"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(570,300)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="trex"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(570,350)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="arex"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(570,400)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="brex"/>
       <a name="type" val="output"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(570,450)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="regStore"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,500)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="jump"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,550)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="branch"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,600)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="usesBRex"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,650)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="usesImm"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,700)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="writesMem"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,750)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="readsMem"/>
       <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(570,800)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="opData"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(570,880)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="pcOut"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(570,960)" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="aData"/>
       <a name="type" val="output"/>
@@ -4210,5 +4038,62 @@
     <wire from="(560,880)" to="(570,880)"/>
     <wire from="(560,960)" to="(570,960)"/>
     <wire from="(570,1090)" to="(570,1100)"/>
+  </circuit>
+  <circuit name="forwarding_unit">
+    <a name="circuit" val="forwarding_unit"/>
+    <a name="simulationFrequency" val="32.0"/>
+    <comp lib="0" loc="(360,210)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="type" val="output"/>
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(410,210)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="5"/>
+    </comp>
+    <comp lib="0" loc="(480,210)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="t1"/>
+      <a name="width" val="5"/>
+    </comp>
+    <comp lib="0" loc="(530,210)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="t2"/>
+      <a name="width" val="5"/>
+    </comp>
+    <comp lib="0" loc="(680,300)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="bit0" val="1"/>
+      <a name="bit1" val="0"/>
+      <a name="facing" val="west"/>
+      <a name="spacing" val="4"/>
+    </comp>
+    <comp lib="1" loc="(650,250)" name="AND Gate">
+      <a name="negate1" val="true"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="3" loc="(590,240)" name="Comparator">
+      <a name="width" val="5"/>
+    </comp>
+    <comp lib="3" loc="(590,290)" name="Comparator">
+      <a name="width" val="5"/>
+    </comp>
+    <wire from="(360,210)" to="(360,320)"/>
+    <wire from="(360,320)" to="(680,320)"/>
+    <wire from="(410,210)" to="(410,250)"/>
+    <wire from="(410,250)" to="(410,300)"/>
+    <wire from="(410,250)" to="(550,250)"/>
+    <wire from="(410,300)" to="(550,300)"/>
+    <wire from="(480,210)" to="(480,280)"/>
+    <wire from="(480,280)" to="(550,280)"/>
+    <wire from="(530,210)" to="(530,230)"/>
+    <wire from="(530,230)" to="(550,230)"/>
+    <wire from="(590,240)" to="(620,240)"/>
+    <wire from="(590,290)" to="(600,290)"/>
+    <wire from="(600,260)" to="(600,290)"/>
+    <wire from="(600,260)" to="(610,260)"/>
+    <wire from="(600,290)" to="(660,290)"/>
+    <wire from="(650,250)" to="(660,250)"/>
+    <wire from="(680,300)" to="(680,320)"/>
   </circuit>
 </project>
