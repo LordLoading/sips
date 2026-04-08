@@ -8,11 +8,12 @@ b = uses b reg
 i = uses imm
 w = writes to mem
 r = reads from mem
+a = alu op
 
 op
     000  001  010  011  100  101  110  111
 000 R         Ji   Jsi  IBi  IBi  IBi  IBi
-001 Isi  Isi  Isi  Isi  Isi  Isi  Isi
+001 Isia Isia Isia Isia Isia Isia Isia
 010  
 011  
 100 Irsi Irsi      Irsi Irsi Irsi 

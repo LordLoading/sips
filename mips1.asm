@@ -1,5 +1,3 @@
-addiu $t1, $t1, 1
-addiu $t1, $t1, 1
-addiu $t1, $t1, 1
-addiu $t1, $t1, 1
-addiu $t1, $t1, 1
+loop:
+addiu $1, $1, 1
+j loop
