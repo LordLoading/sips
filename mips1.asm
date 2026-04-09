@@ -1,3 +1,1 @@
-loop:
-addiu $1, $1, 1
-j loop
+li $t1, 0xcafebabe
