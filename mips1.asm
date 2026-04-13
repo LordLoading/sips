@@ -1,10 +1,6 @@
-.text
-li $t1, 0xcafebabe
-li $t1, 0xffff8000
-lw $t3, var
 loop:
-addiu $t2, $t2, 1
+addiu $t1, $t1, 1
+beq $t1, 100, endLoop
 j loop
-
-.data
-var: .word 0xba115
+endLoop:
+li $t2, 0xcafebabe
